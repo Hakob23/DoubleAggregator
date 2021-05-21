@@ -6,11 +6,7 @@ import "@uniswap/v2-periphery/contracts/interfaces/IERC20.sol";
 import "hardhat/console.sol";
 // import "https://github.com/SwipeWallet/Swipe-Network/blob/master/contracts/staking/StakingV3.sol";
 
-import "@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol";
-
-// import "https://github.com/SwipeWallet/swipe-swap-bsc/blob/master/contracts/uniswapv2/interfaces/IUniswapV2Router02.sol";
-// import "https://github.com/SwipeWallet/swipe-swap-bsc/blob/master/contracts/uniswapv2/interfaces/IERC20.sol";
-// import "https://github.com/SwipeWallet/Swipe-Network/blob/master/contracts/staking/StakingV3.sol";
+//import "@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol";
 
 contract SwipeController {
 

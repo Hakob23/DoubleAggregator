@@ -6,8 +6,6 @@ import '@uniswap/v2-periphery/contracts/interfaces/IERC20.sol';
 import '@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol';
 import '@uniswap/v2-periphery/contracts/libraries/UniswapV2Library.sol';
 
-// EVENTS 
-
 contract ETHUniswap {
 
     event ExchangeTokenToToken(

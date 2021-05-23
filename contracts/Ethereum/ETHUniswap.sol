@@ -5,11 +5,10 @@ pragma solidity >= 0.6.6;
 import '@uniswap/v2-periphery/contracts/interfaces/IERC20.sol';
 import '@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol';
 import '@uniswap/v2-periphery/contracts/libraries/UniswapV2Library.sol';
-import './IMasterChef.sol';
 
 // EVENTS 
 
-contract Aggregator {
+contract ETHUniswap {
 
     event ExchangeTokenToToken(
         uint[] amounts
@@ -46,16 +45,14 @@ contract Aggregator {
     );
 
     IUniswapV2Router02 uniswapRouter02;
-    IMasterChef masterChef;
     
 
     receive() external payable {
 
     }
     
-    constructor(IUniswapV2Router02 _uniswapRouter02, address _factory, IMasterChef _masterChef) public {
+    constructor(IUniswapV2Router02 _uniswapRouter02, address _factory) public {
         uniswapRouter02 = _uniswapRouter02;
-        masterChef = _masterChef;
     }
 
 
@@ -147,26 +144,6 @@ contract Aggregator {
         (uint amountToken, uint amountETH) = uniswapRouter02.removeLiquidityETH(_token, _amountDesired, 0, 0, msg.sender, block.timestamp);
 
         emit RemoveLiquidityETH(amountToken, amountETH);
-    }
-
- function depositFarm(uint256 _pid, uint256 _amount) external {
-        //ToDo - Check Deposit Fee
-        masterChef.deposit(_pid, _amount);
-    }
-
- function withdrawFarm(uint256 _pid, uint256 _amount) external {
-        //ToDo - Check Withdraw Fee
-        masterChef.withdraw(_pid, _amount);
-    }
-
- function emergencyWithdrawFarm(uint256 _pid) external {
-        //ToDo - Check Emergency Withdraw Fee
-        masterChef.emergencyWithdraw(_pid);
-    }
-
- function harvestFarm(uint256 _pid) external {
-        //ToDo - Check Deposit Fee
-        masterChef.deposit(_pid, 0);
     }
 
 
